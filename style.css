@@ -9,10 +9,12 @@ body {
     Arial;
   margin: 0;
   line-height: 1.6;
+  /* line-heightはテキストの行間を設定 */
   color: #222;
 }
 .container {
   max-width: var(--container);
+  /* var()関数はCSS変数とも呼ばれ引数にプロパティやセレクター値をとる、:rootに指定した値を使用する */
   margin: 0 auto;
   padding: 0 16px;
 }
@@ -22,13 +24,16 @@ body {
   background: #fff;
   border-bottom: 1px solid #eee;
   position: sticky;
+  /* stickyと指定することでヘッダーをコンテンツの要素と重複して表示しないよう設定 */
   top: 0;
   z-index: 10;
 }
 .site-header .container {
   display: flex;
+  /* displya: flex;によって要素の並びを設定 */
   align-items: center;
   justify-content: space-between;
+  /* justify-content: space-between;で各要素に等間隔のスペースを空けて並べる */
   padding: 12px 0;
 }
 .logo {
@@ -46,6 +51,7 @@ body {
 }
 .menu-toggle {
   display: none;
+  /* パソコンのサイズではハンバーガーメニューは非表示にする */
   border: 0;
   background: none;
   font-size: 1.3rem;
@@ -82,9 +88,11 @@ body {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+  /* flex-wrapは折り返しを指定するプロパティ、wrapは普通に折り返しを設定できる */
 }
 .card {
   flex: 1 1 240px;
+  /* flexプロパティ（flex: ○○） は、CSSのFlexboxレイアウトで要素の「伸び方・縮み方・基準幅」を一括で指定するためのプロパティ */
   background: #fff;
   padding: 20px;
   border: 1px solid #eee;
@@ -124,6 +132,7 @@ body {
   }
   .menu-toggle {
     display: inline-block;
+    /* 768px以下の時はハンバーガーメニューを表示する */
   }
   .hero {
     padding: 40px 0;
@@ -133,5 +142,70 @@ body {
   }
   .cards {
     flex-direction: column;
+    /* columnでカードコンテンツを積み重なるように並べる */
   }
+}
+
+body {
+  background: #f3f4f6;
+  /* うすいグレーで紙っぽく */
+}
+
+/* コンテナの横幅と余白微調整 */
+.container {
+  max-width: 960px;
+  padding: 0 20px;
+}
+
+/* ヘッダーの影を少しつける */
+.site-header {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0, 04);
+}
+
+/* ナビをちょっとだけ上品に */
+.nav a {
+  opacity: 0.85;
+}
+.nav a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* ヒーローをグラデーションに */
+.hero {
+  background: linear-gradient(135deg, #e0f2fe, #f5f3ff);
+}
+
+/* CTAボタンをより「ボタン」らしく */
+.cta {
+  border-radius: 999px;
+  padding: 12px 22px;
+  font-weight: 600;
+}
+.cta:hover {
+  filter: brightness(0.95);
+}
+
+/* カードの影と余白 */
+.card {
+  border: none;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.12);
+}
+
+/* セクションの上下余白を少し広げる */
+.services,
+.about,
+.contact {
+  padding: 60px 0;
+}
+
+/* フッターの文字を少し小さく */
+.site-footer p {
+  font-size: 0.85rem;
+  opacity: 0.8;
 }
