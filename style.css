@@ -209,3 +209,184 @@ body {
   font-size: 0.85rem;
   opacity: 0.8;
 }
+/* 全体のトーンとフォント */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif;
+  background: #f3f4f6;
+  color: #111827;
+}
+
+/* セクションタイトルを少し強調 */
+/* .セレクタ名 > セレクタ名は直下の小要素だけを選べためのCSSの指定 */
+.services > .container > h3,
+.about > .container > h3,
+.contact > .container > h3 {
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+  position: relative;
+  padding-left: 14px;
+}
+
+.services > .container > h3::before,
+.abount > .container > h3::before,
+.contact > .container > h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.4em;
+  width; 4px;
+  height: 1.1rem;
+  border-radius: 999px;
+  background: #3b82f6;
+  /* 青いライン */
+}
+
+/* ヘッダー周りのブラッシュアップ */
+
+.site-header {
+  background: #ffffffcc;
+  /* 要素の背後の領域にボカシや色変化のようなグラフィック効果を適用できるセレクタ */
+  backdrop-filter: blur(8px);
+  box-shadow: 0 1px 4px rgba(15,23,42,0.04);
+}
+
+.logo {
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+.nav a {
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #3b82f6;
+  transition: width 0.2s ease;
+}
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* ヒーローセクション */
+.hero {
+  background: radial-gradient(circle at top left, #dbeafe, #eef2ff 40%, #f9fafb 80%);
+  padding: 72px 0;
+}
+
+.hero .container {
+  max-width: 720px;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  margin-bottom: 20px;
+  color: #4b5563;
+}
+
+/* CTAボタン */
+.cta {
+  border-radius: 999px;
+  margin-bottom: 20px;
+  padding: 12px 24px;
+  font-weight: 600;
+  box-shadow: 0 6px 14px rgba(37,99,235,0.3);
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  border: none;
+}
+.cta:hover {
+  filter: brightness(0.96);
+  transform: translateY(1px);
+}
+
+/* サービスカード */
+.cards {
+  /* gapはCSSの一括指定プロパティで行や列の間の隙間を設定 */
+  gap: 20px;
+}
+
+.card {
+  border: none;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(15,23,42,0.08);
+  padding: 24px 20px;
+  transition: transform 0.15s ease, box-shadow 0.15x ease;
+}
+
+.card h4 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.card p {
+  margin: 0;
+  color: #4b5563;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px rgba(15,23,42,0.14);
+}
+
+/* 会社情報・お問い合わせ */
+.about p {
+  max-width: 640px;
+  line-height: 1.8;
+}
+
+.contact form {
+  max-width: 520px;
+}
+
+.contact input,
+.contact textarea {
+  font-size: 0.95rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.25);
+}
+
+/* 送信ボタンをCTAと合わせる */
+.contact button[type="submit"] {
+  align-self: flex-start;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: none;
+  background: #111827;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.contact button[type="submit"]:hover {
+  opacity: 0.9;
+  transform: translateY(1px);
+}
+
+/* フッター */
+.site-footer {
+  background: #020617;
+  color: #9ca3af;
+}
+.site-footer p {
+  font-size: 0.85rem;
+}
